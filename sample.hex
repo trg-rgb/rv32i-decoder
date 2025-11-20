@@ -1,0 +1,10 @@
+# sample.hex
+# a small RV32I program fragment -- computes a simple loop
+# one instruction per line, comments after #
+
+FF010113    # addi sp, sp, -16   -- allocate stack frame
+00112623    # sw   ra, 12(sp)    -- save return address
+00050513    # addi a0, a0, 0     -- mv a0, a0 (nop effectively)
+00150513    # addi a0, a0, 1     -- a0 += 1
+FFF50513    # addi a0, a0, -1    -- a0 -= 1
+00008067    # jalr zero, 0(ra)   -- ret
